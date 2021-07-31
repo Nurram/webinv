@@ -1,0 +1,348 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+/* General Property */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Noto Sans JP';
+    overflow-y: hidden;
+}
+.overlay-dark {
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
+}
+.white-text {
+    color: white;
+    text-shadow: 0 0 30px rgb(0 0 0 / 80%);
+}
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.text-center {
+    text-align: center;
+}
+.section-title {
+    font-size: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    margin: 0 1rem;
+}
+.section-subtitle {
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+.circle {
+    border-radius: 50%;
+}
+.input {
+    padding: .5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.wrapper {
+    display: none;
+    overflow-x: hidden;
+}
+@-webkit-keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateY(0);
+    }
+ }
+ 
+ @keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+ }
+ 
+ .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+ }
+/* Popup Section */
+.popup {
+    width: 100%;
+    height: 100%;
+    background-image: url('../res/header.jpg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* transition: .5s; */
+    color: white;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+}
+.popup a {
+    color: white;
+    padding: .5rem;
+    margin: 1rem;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: .5s;
+    display: none;
+}
+.popup a:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+/* Audio button*/
+.audio-play {
+    width: 3rem;
+    height: 3rem;
+    background-color: seagreen;
+    color: white;
+    display: none;
+    border-radius: 50%;
+    text-align: center;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 9999;
+}
+.audio-play i {
+   margin-top: 1rem;
+}
+/*Header Section */
+.header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.header h1 {
+    font-family: 'Montserrat';
+    font-size: 4rem;
+    text-align: center;
+}
+.header .lead {
+    letter-spacing: 3px;
+}
+
+/*Meet Section */
+.meet {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 5rem 0;
+}
+
+.meet p {
+    margin: 0 1rem;
+}
+
+/*Article Section */
+article {
+    box-sizing: border-box;
+    text-align: left;
+}
+.meet article img {
+    max-width: 100%;
+    padding-top: 5rem;
+}
+@media (min-width: 768px) {
+    .meet article {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .meet article img {
+        max-width: 50%;
+    }
+    .meet article:nth-child(odd) img {
+        max-width: 50%;
+        margin-left: 2rem;
+        margin-right: 1rem;
+    }
+    .meet article:nth-child(even) img {
+        max-width: 50%;
+        margin-left: 1rem;
+        margin-right: 2rem;
+        order: 2;
+    }
+}
+
+/*Married Section */
+.married {
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+}
+.married p {
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+.couple {
+    display: flex;
+    flex-direction: column;
+}
+.couple img {
+    width: 50vw;
+    height: 50vw;
+    display: block;
+    object-fit: cover;
+    margin: 4rem auto 1rem auto;
+}
+.couple p {
+    margin: 0 1rem;
+}
+.married-content > .section-subtitle {
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .married-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .married-content .couple {
+        width: 45vw;
+    }
+    .married-content .couple img{
+        width: 25vw;
+        height: 25vw;
+    }
+    .married-content > h3 {
+        font-size: 5rem;
+    }
+}
+/*Agenda Section*/
+.agenda {
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 1rem !important;
+}
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.date h2 {
+    font-size: 4rem;
+}
+.date p {
+    font-size: 1.2rem;
+}
+.month-year {
+    display: flex;
+    flex-direction: column;
+}
+.agenda h3 {
+    font-size: 1.5rem;
+}
+.agenda button {
+    margin-top: .5rem;
+    background-color: transparent;
+    border: 1px solid blue;
+    color: blue;
+    padding: .5rem;
+    cursor: pointer;
+}
+.agenda > p:nth-child(6) {
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/*Pandemic Section*/
+.pandemic {
+    width: 100%;
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    padding: 5rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pandemic p {
+    color: white;
+    margin: auto;
+}
+
+/*Comment Section*/
+.comment {
+    padding: 4rem 2rem 2rem 2rem;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comment-content {
+    width: 100%;
+    max-width: 540px;
+}
+.comment input {
+    width: 100%;
+    display: block;
+    margin-bottom: .5rem;
+}
+.comment textarea {
+    width: 100%;
+    display: block;
+}
+#comment-list {
+    max-height: 50vh;
+    overflow: auto;
+    text-align: left;
+}
+#comment-list p {
+    font-size: .9rem;
+}
+#comment-list p:nth-child(3) {
+    font-size: .7rem;
+}
+/*Footer Section */
+footer {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: seagreen;
+    color: white;
+}
+
+footer span {
+    color: red;
+}
